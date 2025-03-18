@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K. Teja Kiran Chandu - Portfolio</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        /* Header */
+        header {
+            background: #333;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #77aaff 3px solid;
+        }
+        header h1 {
+            text-align: center;
+            margin: 0;
+            font-size: 36px;
+        }
+        header p {
+            text-align: center;
+            font-size: 18px;
+        }
+
+        /* Navigation */
+        nav {
+            text-align: center;
+            margin: 20px 0;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #77aaff;
+        }
+        nav a.active {
+            color: #77aaff;
+            font-weight: bold;
+        }
+
+        /* Home Page */
+        #home {
+            padding: 40px 0;
+            text-align: center;
+        }
+        #home h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        #home p {
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        /* About Section */
+        #about {
+            padding: 40px 0;
+            background: #fff;
+            text-align: center;
+        }
+        #about h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .profile-photo {
+            display: block;
+            margin: 20px auto;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            cursor: pointer;
+        }
+        #about p {
+            font-size: 1.1em;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Education Section */
+        #education {
+            padding: 40px 0;
+            background: #f4f4f4;
+            text-align: center;
+        }
+        #education h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .education-item {
+            background: #fff;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .education-item h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        .education-item p {
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        /* Skills Section */
+        #skills {
+            padding: 40px 0;
+            background: #fff;
+            text-align: center;
+        }
+        #skills h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        #skills ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        #skills ul li {
+            background: #77aaff;
+            color: #fff;
+            padding: 10px;
+            margin: 10px auto;
+            max-width: 600px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Projects Section */
+        #projects {
+            padding: 40px 0;
+            background: #f4f4f4;
+            text-align: center;
+        }
+        #projects h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .project {
+            background: #fff;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .project h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        .project p {
+            font-size: 1.1em;
+            color: #555;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+        .btn:hover {
+            background: #77aaff;
+            transform: scale(1.05);
+        }
+
+        /* Contact Section */
+        #contact {
+            padding: 40px 0;
+            background: #fff;
+            text-align: center;
+        }
+        #contact h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        #contact p {
+            font-size: 1.2em;
+            color: #555;
+        }
+        .social-links {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .social-links li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 1.1em;
+            padding: 10px 20px;
+            border: 2px solid #77aaff;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        .social-links li a:hover {
+            background: #77aaff;
+            color: #fff;
+            transform: translateY(-5px);
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        /* Dark Mode Styles */
+        .dark-mode {
+            background-color: #1a1a1a;
+            color: #ffffff;
+        }
+        .dark-mode header {
+            background: #111;
+        }
+        .dark-mode #about, .dark-mode #education, .dark-mode #projects {
+            background: #222;
+        }
+        .dark-mode #skills, .dark-mode #contact {
+            background: #1a1a1a;
+        }
+        .dark-mode footer {
+            background: #111;
+        }
+        .dark-mode .social-links li a {
+            color: #fff;
+            border-color: #77aaff;
+        }
+        .dark-mode .social-links li a:hover {
+            background: #77aaff;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>K. Teja Kiran Chandu</h1>
+            <p>Web Developer | Creative Thinker</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About Me</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact Me</a>
+    </nav>
+
+    <!-- Home Page -->
+    <section id="home">
+        <div class="container">
+            <h2>Welcome to My Portfolio</h2>
+            <p>Hi, I'm Teja, a passionate web developer with a love for creating beautiful and functional websites. Explore my work and get in touch!</p>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <img src="cartoon-cute-school-boy-photo.jpg" alt="Teja Kiran" class="profile-photo" id="profilePhoto">
+            <p>
+                Hi, I'm Teja, a passionate web developer with a love for creating beautiful and functional websites. I have experience in HTML, CSS, JavaScript, and various web development frameworks. I enjoy turning complex problems into simple, beautiful, and intuitive designs.
+            </p>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <h2>Education</h2>
+            <div class="education-item">
+                <h3>Bachelor of Science in Computer Science</h3>
+                <p>Sasi Institute of Technology and Engineering, Tadepalligudem</p>
+                <p>Graduation Year: 2024</p>
+            </div>
+            <div class="education-item">
+                <h3>Intermediate (12th Grade)</h3>
+                <p>Sasi Junior College, Tadepalligudem</p>
+                <p>Year of Completion: 2020</p>
+            </div>
+            <div class="education-item">
+                <h3>Secondary School (10th Grade)</h3>
+                <p>Sasi High School, Tadepalligudem</p>
+                <p>Year of Completion: 2018</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <ul>
+                <li id="skill1">HTML, CSS, JavaScript</li>
+                <li id="skill2">Python</li>
+                <li id="skill3">Java</li>
+                <li id="skill4">Version Control (Git)</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="project" id="project1">
+                <h3>Todo List App</h3>
+                <p>
+                    A simple and intuitive Todo List application built using HTML, CSS, and JavaScript. Users can add, edit, and delete tasks, mark tasks as completed, and filter tasks based on their status. The app also features local storage integration to save tasks even after the browser is closed.
+                </p>
+                <a href="#" class="btn">View Project</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <p>If you'd like to get in touch, feel free to reach out via email or connect with me on social media.</p>
+            <ul class="social-links">
+                <li><a href="mailto:kiran.kanuri@sasi.ac.in">kiran.kanuri@sasi.ac.in</a></li>
+                <li><a href="https://github.com/tejakiran999" target="_blank">https://github.com/tejakiran999</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 K. Teja Kiran Chandu. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Dark Mode Toggle Button -->
+    <button onclick="toggleDarkMode()" style="position: fixed; bottom: 20px; right: 20px; padding: 10px 20px; background: #333; color: #fff; border: none; border-radius: 5px; cursor: pointer;">
+        Toggle Dark Mode
+    </button>
+
+    <script>
+        // Smooth scrolling and highlighting active link
+        document.addEventListener('DOMContentLoaded', function () {
+            const navLinks = document.querySelectorAll('nav a');
+            const sections = document.querySelectorAll('section');
+
+            // Function to highlight the active link
+            const highlightNavLink = () => {
+                let index = sections.length;
+
+                // Check which section is in view
+                while (--index && window.scrollY + 50 < sections[index].offsetTop) {}
+
+                // Remove active class from all links
+                navLinks.forEach((link) => link.classList.remove('active'));
+
+                // Add active class to the current link
+                navLinks[index].classList.add('active');
+            };
+
+            // Add click event listeners to nav links for smooth scrolling
+            navLinks.forEach((link) => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+
+                    // Scroll to the target section smoothly
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+
+                    // Highlight the clicked link
+                    navLinks.forEach((link) => link.classList.remove('active'));
+                    link.classList.add('active');
+                });
+            });
+
+            // Highlight the active link on scroll
+            window.addEventListener('scroll', highlightNavLink);
+
+            // Highlight the active link on page load
+            highlightNavLink();
+        });
+
+        // Dark Mode Toggle
+        const toggleDarkMode = () => {
+            document.body.classList.toggle('dark-mode');
+            const isDark = document.body.classList.contains('dark-mode');
+            localStorage.setItem('darkMode', isDark);
+        };
+
+        // Check for saved dark mode preference
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+    </script>
+</body>
+</html>
