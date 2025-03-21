@@ -1,16 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <a href="https://tejakiran999.github.io/exp1.html">exp1</a><br>
-    <a href="https://tejakiran999.github.io/exp2.html">exp2</a><br>
-     <a href="https://tejakiran999.github.io/exp3.html">exp3</a><br>
-    <a href="https://tejakiran999.github.io/Resume.html">Resume</a><br>
-    <a href="https://tejakiran999.github.io/VisionMission.html">VisionMission</a><br>
-     <a href="https://tejakiran999.github.io/registrationform.html">registrationform</a><br>
-</body>
-</html>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    gap: 2px; /* Adds spacing between links */
+    text-align: center;
+    margin-bottom: 20%;
+    position: relative;
+   
+}
+
+a {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: 1px solid black;
+    border-radius: 10px; /* Rounded corners */
+    color: black;
+    transition: all 0.3s ease-in-out;
+    background-color: coral;
+}
+
+a:hover {
+    background-color: black;
+    color: white;
+}
+p{
+    font-size: 20px;
+}
+
+        </style>
+    </head>
+    <body>
+        <div class="box">
+            <h1><b>My Experiments</b></h1>
+        <a href="https://tejakiran999.github.io/exp1.html">exp1</a><br>
+        <a href="https://tejakiran999.github.io/exp2.html">exp2</a><br>
+        <a href="https://tejakiran999.github.io/exp3.html">exp3</a><br>
+        <a href="https://tejakiran999.github.io/Resume.html">Resume</a><br>
+        <a href="https://tejakiran999.github.io/VisionMission.html">VisionMission</a><br>
+        <a href="https://tejakiran999.github.io/registrationform.html">registrationform</a><br>
+        </div>
+    </body>
+    </html>
