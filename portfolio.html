@@ -5,426 +5,427 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>K. Teja Kiran Chandu - Portfolio</title>
     <style>
-        /* General Styles */
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
         }
 
-        /* Header */
-        header {
-            background: #333;
-            color: #fff;
-            padding-top: 30px;
-            min-height: 70px;
-            border-bottom: #77aaff 3px solid;
-        }
-        header h1 {
-            text-align: center;
+        /* Reset and Base Styles */
+        * {
             margin: 0;
-            font-size: 36px;
+            padding: 0;
+            box-sizing: border-box;
         }
-        header p {
-            text-align: center;
-            font-size: 18px;
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
         }
 
         /* Navigation */
-        nav {
-            text-align: center;
-            margin: 20px 0;
-        }
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #333;
-            font-size: 1.1em;
-            transition: color 0.3s ease;
-        }
-        nav a:hover {
-            color: #77aaff;
-        }
-        nav a.active {
-            color: #77aaff;
-            font-weight: bold;
+        .nav-container {
+            background: #1a252f; /* Keep the dark navy background */
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            border-radius: 0 0 15px 15px; /* Rounded bottom corners */
         }
 
-        /* Home Page */
-        #home {
-            padding: 40px 0;
-            text-align: center;
-        }
-        #home h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
-        #home p {
-            font-size: 1.2em;
-            color: #555;
-        }
-
-        /* About Section */
-        #about {
-            padding: 40px 0;
-            background: #fff;
-            text-align: center;
-        }
-        #about h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
-        .profile-photo {
-            display: block;
-            margin: 20px auto;
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-            cursor: pointer;
-        }
-        #about p {
-            font-size: 1.1em;
-            color: #555;
-            max-width: 800px;
+        .nav-box {
+            max-width: 1200px;
             margin: 0 auto;
-        }
-
-        /* Education Section */
-        #education {
-            padding: 40px 0;
-            background: #f4f4f4;
-            text-align: center;
-        }
-        #education h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
-        .education-item {
-            background: #fff;
-            padding: 20px;
-            margin: 20px auto;
-            max-width: 600px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .education-item h3 {
-            font-size: 1.5em;
-            margin-bottom: 10px;
-        }
-        .education-item p {
-            font-size: 1.1em;
-            color: #555;
-        }
-
-        /* Skills Section */
-        #skills {
-            padding: 40px 0;
-            background: #fff;
-            text-align: center;
-        }
-        #skills h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
-        #skills ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        #skills ul li {
-            background: #77aaff;
-            color: #fff;
-            padding: 10px;
-            margin: 10px auto;
-            max-width: 600px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        /* Projects Section */
-        #projects {
-            padding: 40px 0;
-            background: #f4f4f4;
-            text-align: center;
-        }
-        #projects h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
-        .project {
-            background: #fff;
-            padding: 20px;
-            margin: 20px auto;
-            max-width: 600px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .project h3 {
-            font-size: 1.5em;
-            margin-bottom: 10px;
-        }
-        .project p {
-            font-size: 1.1em;
-            color: #555;
-        }
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background: #333;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s ease, transform 0.3s ease;
-        }
-        .btn:hover {
-            background: #77aaff;
-            transform: scale(1.05);
-        }
-
-        /* Contact Section */
-        #contact {
-            padding: 40px 0;
-            background: #fff;
-            text-align: center;
-        }
-        #contact h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
-        #contact p {
-            font-size: 1.2em;
-            color: #555;
-        }
-        .social-links {
-            list-style-type: none;
-            padding: 0;
+            padding: 20px 40px;
             display: flex;
-            justify-content: center;
-            gap: 20px;
+            justify-content: space-between;
+            align-items: center;
         }
-        .social-links li a {
+
+        h1 {
+            font-size: 2em;
+            font-weight: 700;
+            background: linear-gradient(45deg, #6b48ff, #00d4ff); /* New purple to blue gradient */
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            position: relative;
+            white-space: nowrap; /* Ensures name stays on one line */
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: linear-gradient(45deg, #6b48ff, #00d4ff); /* Matching gradient underline */
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
             text-decoration: none;
-            color: #333;
-            font-size: 1.1em;
-            padding: 10px 20px;
-            border: 2px solid #77aaff;
-            border-radius: 5px;
+            color: #ffffff; /* White text */
+            font-weight: 500;
+            text-transform: uppercase; /* Uppercase text */
+            letter-spacing: 1px;
+            padding: 8px 16px;
             transition: all 0.3s ease;
+            position: relative;
+            white-space: nowrap;
         }
-        .social-links li a:hover {
-            background: #77aaff;
-            color: #fff;
+
+        .nav-links a:hover {
+            color: #ff8c00; /* Orange on hover */
+        }
+
+        /* Content */
+        .content {
+            max-width: 1200px;
+            margin: 100px auto 40px;
+            padding: 20px;
+        }
+
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .section:hover {
             transform: translateY(-5px);
         }
 
-        /* Footer */
-        footer {
-            background: #333;
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 40px;
+        h2 {
+            color: #2c3e50;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            position: relative;
         }
 
-        /* Dark Mode Styles */
-        .dark-mode {
-            background-color: #1a1a1a;
-            color: #ffffff;
+        h2::after {
+            content: '';
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(45deg, #6b48ff, #00d4ff); /* New gradient for underline */
+            position: absolute;
+            bottom: -5px;
+            left: 0;
         }
-        .dark-mode header {
-            background: #111;
+
+        p {
+            color: #666;
+            margin-bottom: 15px;
         }
-        .dark-mode #about, .dark-mode #education, .dark-mode #projects {
-            background: #222;
+
+        /* About Me with Photo */
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
         }
-        .dark-mode #skills, .dark-mode #contact {
-            background: #1a1a1a;
+
+        .about-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #ff8c00; /* Orange border */
         }
-        .dark-mode footer {
-            background: #111;
+
+        .about-text {
+            flex: 1;
         }
-        .dark-mode .social-links li a {
+
+        /* Education List */
+        .education-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .education-item {
+            margin-bottom: 20px;
+        }
+
+        .education-item h3 {
+            color: #2c3e50;
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
+
+        .education-item p {
+            color: #666;
+            margin: 0;
+        }
+
+        /* Skills */
+        .skills-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        .skill-item {
+            background: linear-gradient(45deg, #6b48ff, #00d4ff); /* New gradient */
+            padding: 12px 20px;
+            border-radius: 25px;
             color: #fff;
-            border-color: #77aaff;
+            font-size: 1em;
+            font-weight: 500;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
         }
-        .dark-mode .social-links li a:hover {
-            background: #77aaff;
+
+        .skill-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .skill-item.clicked {
+            background: linear-gradient(45deg, #00d4ff, #6b48ff); /* Reverse new gradient on click */
+        }
+
+        /* Projects */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(45deg, #6b48ff, #00d4ff); /* New gradient */
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-card h3 {
+            color: #2c3e50;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            color: #666;
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+
+        /* Contact Section */
+        .contact-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 500;
+            transition: transform 0.3s ease, background 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-link:hover {
+            transform: translateY(-3px);
+            background: linear-gradient(45deg, #6b48ff, #00d4ff); /* New gradient */
             color: #fff;
+        }
+
+        .contact-link i {
+            font-size: 1.2em;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-box {
+                flex-direction: column;
+                gap: 15px;
+                padding: 20px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .content {
+                margin-top: 150px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            .skills-list {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .about-photo {
+                width: 120px;
+                height: 120px;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
+    <div class="nav-container">
+        <div class="nav-box">
             <h1>K. Teja Kiran Chandu</h1>
-            <p>Web Developer | Creative Thinker</p>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About Me</a>
+                <a href="#progress">Progress</a>
+                <a href="#education">Education</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact Me</a>
+            </div>
         </div>
-    </header>
+    </div>
 
-    <!-- Navigation -->
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About Me</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact Me</a>
-    </nav>
-
-    <!-- Home Page -->
-    <section id="home">
-        <div class="container">
-            <h2>Welcome to My Portfolio</h2>
-            <p>Hi, I'm Teja, a passionate web developer with a love for creating beautiful and functional websites. Explore my work and get in touch!</p>
+    <div class="content">
+        <div class="section" id="home">
+            <h2>Home</h2>
+            <p>Welcome to my portfolio! I'm K. Teja Kiran Chandu, a passionate software developer with a focus on creating innovative and user-friendly applications. Explore my work and skills below.</p>
         </div>
-    </section>
 
-    <!-- About Me Section -->
-    <section id="about">
-        <div class="container">
+        <div class="section" id="about">
             <h2>About Me</h2>
-            <img src="cartoon-cute-school-boy-photo.jpg" class="profile-photo" id="profilePhoto">
-            <p>
-                Hi, I'm Teja, a passionate web developer with a love for creating beautiful and functional websites. I have experience in HTML, CSS, JavaScript, and various web development frameworks. I enjoy turning complex problems into simple, beautiful, and intuitive designs.
-            </p>
+            <div class="about-container">
+                <img src="-cute-school-boy-photo.jpg" alt="K. Teja Kiran Chandu" class="about-photo">
+                <div class="about-text">
+                    <p>I'm a passionate software developer with a strong foundation in web technologies and a keen interest in creating innovative solutions. With a blend of technical expertise and creative problem-solving, I strive to build efficient and user-friendly applications.</p>
+                    <p>Currently pursuing [Your Degree] at [Your University], I specialize in full-stack development and have experience working with modern frameworks and tools.</p>
+                </div>
+            </div>
         </div>
-    </section>
 
-    <!-- Education Section -->
-    <section id="education">
-        <div class="container">
+        <div class="section" id="progress">
+            <h2>Progress</h2>
+            <p> Currently a student pursuing a Bachelor of Science in Computer Science at Sasi Institute of Technology and Engineering, Tadepalligudem</p>
+            <p> Achieved a consistent GPA of [Your GPA] throughout my academic journey</p>
+            <p> Currently learning advanced JavaScript frameworks like React and exploring backend development with Node.js</p>
+            <p> Working towards securing an internship to gain real-world industry experience</p>
+        </div>
+
+        <div class="section" id="education">
             <h2>Education</h2>
-            <div class="education-item">
-                <h3>Bachelor of Science in Computer Science</h3>
-                <p>Sasi Institute of Technology and Engineering, Tadepalligudem</p>
-                <p>Graduation Year: 2024</p>
-            </div>
-            <div class="education-item">
-                <h3>Intermediate (12th Grade)</h3>
-                <p>Sasi Junior College, Tadepalligudem</p>
-                <p>Year of Completion: 2020</p>
-            </div>
-            <div class="education-item">
-                <h3>Secondary School (10th Grade)</h3>
-                <p>Sasi High School, Tadepalligudem</p>
-                <p>Year of Completion: 2018</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills">
-        <div class="container">
-            <h2>Skills</h2>
-            <ul>
-                <li id="skill1">HTML, CSS, JavaScript</li>
-                <li id="skill2">Python</li>
-                <li id="skill3">Java</li>
-                <li id="skill4">Version Control (Git)</li>
+            <ul class="education-list">
+                <li class="education-item">
+                    <h3>Bachelor of Science in Computer Science</h3>
+                    <p>Sasi Institute of Technology and Engineering, Tadepalligudem</p>
+                    <p>Graduation Year: 2027</p>
+                </li>
+                <li class="education-item">
+                    <h3>Intermediate (12th Grade)</h3>
+                    <p>Sasi Junior College, Tadepalligudem</p>
+                    <p>Year of Completion: 2020</p>
+                </li>
+                <li class="education-item">
+                    <h3>Secondary School (10th Grade)</h3>
+                    <p>Sasi High School, Tadepalligudem</p>
+                    <p>Year of Completion: 2018</p>
+                </li>
             </ul>
         </div>
-    </section>
 
-    <!-- Projects Section -->
-    <section id="projects">
-        <div class="container">
-            <h2>Projects</h2>
-            <div class="project" id="project1">
-                <h3>Todo List App</h3>
-                <p>
-                    A simple and intuitive Todo List application built using HTML, CSS, and JavaScript. Users can add, edit, and delete tasks, mark tasks as completed, and filter tasks based on their status. The app also features local storage integration to save tasks even after the browser is closed.
-                </p>
-                <a href="#" class="btn">View Project</a>
+        <div class="section" id="skills">
+            <h2>Skills</h2>
+            <div class="skills-list">
+                <span class="skill-item">HTML5</span>
+                <span class="skill-item">CSS3</span>
+                <span class="skill-item">JavaScript</span>
+                <span class="skill-item">Python</span>
+                <span class="skill-item">Git</span>
             </div>
         </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
+        <div class="section" id="projects">
+            <h2>Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>Todo List App</h3>
+                    <p>A simple and intuitive Todo List application built using HTML, CSS, and JavaScript. Users can add, edit, and delete tasks, mark tasks as completed, and filter tasks based on their status. The app also features local storage integration to save tasks even after the browser is closed.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="contact">
             <h2>Contact Me</h2>
             <p>If you'd like to get in touch, feel free to reach out via email or connect with me on social media.</p>
-            <ul class="social-links">
-                <li><a href="mailto:kiran.kanuri@sasi.ac.in">kiran.kanuri@sasi.ac.in</a></li>
-                <li><a href="https://github.com/tejakiran999" target="_blank">https://github.com/tejakiran999</a></li>
-            </ul>
+            <div class="contact-links">
+                <a href="mailto:kiran.kanuri@sasi.ac.in" class="contact-link">
+                    <i class="fas fa-envelope"></i> kiran.kanuri@sasi.ac.in
+                </a>
+                <a href="https://github.com/tejakiran999" target="_blank" class="contact-link">
+                    <i class="fab fa-github"></i> github.com/tejakiran999
+                </a>
+            </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2023 K. Teja Kiran Chandu. All rights reserved.</p>
-        </div>
-    </footer>
+    <!-- Font Awesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
-    <!-- Dark Mode Toggle Button -->
-    <button onclick="toggleDarkMode()" style="position: fixed; bottom: 20px; right: 20px; padding: 10px 20px; background: #333; color: #fff; border: none; border-radius: 5px; cursor: pointer;">
-        Toggle Dark Mode
-    </button>
-
+    <!-- JavaScript for Skill Click Effect -->
     <script>
-        // Smooth scrolling and highlighting active link
-        document.addEventListener('DOMContentLoaded', function () {
-            const navLinks = document.querySelectorAll('nav a');
-            const sections = document.querySelectorAll('section');
-
-            // Function to highlight the active link
-            const highlightNavLink = () => {
-                let index = sections.length;
-
-                // Check which section is in view
-                while (--index && window.scrollY + 50 < sections[index].offsetTop) {}
-
-                // Remove active class from all links
-                navLinks.forEach((link) => link.classList.remove('active'));
-
-                // Add active class to the current link
-                navLinks[index].classList.add('active');
-            };
-
-            // Add click event listeners to nav links for smooth scrolling
-            navLinks.forEach((link) => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const targetId = link.getAttribute('href');
-                    const targetSection = document.querySelector(targetId);
-
-                    // Scroll to the target section smoothly
-                    targetSection.scrollIntoView({ behavior: 'smooth' });
-
-                    // Highlight the clicked link
-                    navLinks.forEach((link) => link.classList.remove('active'));
-                    link.classList.add('active');
-                });
+        document.querySelectorAll('.skill-item').forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('clicked');
             });
-
-            // Highlight the active link on scroll
-            window.addEventListener('scroll', highlightNavLink);
-
-            // Highlight the active link on page load
-            highlightNavLink();
         });
-
-        // Dark Mode Toggle
-        const toggleDarkMode = () => {
-            document.body.classList.toggle('dark-mode');
-            const isDark = document.body.classList.contains('dark-mode');
-            localStorage.setItem('darkMode', isDark);
-        };
-
-        // Check for saved dark mode preference
-        if (localStorage.getItem('darkMode') === 'true') {
-            document.body.classList.add('dark-mode');
-        }
     </script>
 </body>
 </html>
